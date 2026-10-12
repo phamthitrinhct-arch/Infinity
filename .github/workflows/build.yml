@@ -1,0 +1,19 @@
+name: Build INFINITY
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check source
+        run: |
+          ls -la
+          find . -name "*.swift"
+
+      - name: Build notice
+        run: echo "Source found. A complete Xcode project is required to build the IPA."
